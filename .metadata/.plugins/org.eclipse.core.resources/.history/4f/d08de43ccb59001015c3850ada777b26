@@ -1,0 +1,99 @@
+package com.JOSE.Inventario.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.JOSE.Inventario.DTO.ProductoRequestDto;
+import com.JOSE.Inventario.DTO.ProductoResponseDto;
+import com.JOSE.Inventario.Model.Producto;
+import com.JOSE.Inventario.Service.IProductoService;
+
+@Controller
+//@RequestMapping("/inventario-app/producto")
+@PreAuthorize("denyAll()")
+public class ProductoController {
+
+    @Autowired
+    private IProductoService productoService;
+
+   // @PreAuthorize("hasAuthority('READ')")
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping
+    public ResponseEntity<List<ProductoResponseDto>> getAllProductos() {
+        return ResponseEntity.ok(productoService.listaProductos());
+    }
+
+    @PreAuthorize("permitAll()")
+    @GetMapping("/publico")
+    public ResponseEntity<List<ProductoResponseDto>> getProductosPublico() {
+         //ResponseEntity.ok(productoService.listaProductos());
+         List<ProductoResponseDto> productos = productoService.listaProductos();
+        return null;
+    }
+    
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasAuthority('CREATE')")
+    @PostMapping("/guardar")
+    public ResponseEntity<?> createProducto(@RequestBody ProductoRequestDto productoDto) {
+        try {
+     
+
+            ProductoResponseDto newProducto = productoService.guardarProducto(productoDto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(newProducto);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body("Error al crear el producto: " + e.getMessage());
+        }
+    }
+
+    //@PreAuthorize("hasAuthority('UPDATE')")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateProducto(@PathVariable Long id, @RequestBody ProductoRequestDto productoDto) {
+        try {
+        
+            ProductoResponseDto updatedProducto = productoService.actualizarProducto(id, productoDto);
+            return ResponseEntity.ok(updatedProducto);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no encontrado");
+        }
+    }
+
+    @PreAuthorize("hasAuthority('READ')")
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getProductoById(@PathVariable Long id) {
+        try {
+            ProductoResponseDto producto = productoService.buscarProductoId(id);
+            return ResponseEntity.ok(producto);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no encontrado");
+        }
+    }
+ 
+    //@PreAuthorize("hasAuthority('DELETE')")
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteProducto(@PathVariable Long id) {
+        try {
+            productoService.buscarProductoId(id); // Verificar si existe
+            productoService.eliminarProductoPorId(id);
+            return ResponseEntity.ok("Producto eliminado correctamente");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Producto no encontrado");
+        }
+    }
+}

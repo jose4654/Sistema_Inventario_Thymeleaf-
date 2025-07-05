@@ -1,0 +1,274 @@
+!SESSION 2025-07-05 11:11:27.525 -----------------------------------------------
+eclipse.buildId=4.35.0.202504180233
+java.version=21.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY ch.qos.logback.classic 1 0 2025-07-05 11:11:30.224
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.lemminx.uber-jar 4 0 2025-07-05 11:11:30.450
+!MESSAGE bundle org.eclipse.lemminx.uber-jar:0.29.0 (328) Component descriptor entry 'OSGI-INF/*.xml' not found
+
+!ENTRY ch.qos.logback.classic 1 0 2025-07-05 11:11:52.407
+!MESSAGE Logback config file: C:\Users\brian\Desktop\sitema inventario\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.0.20241001-1350.xml
+
+!ENTRY org.eclipse.ui 2 0 2025-07-05 11:11:52.842
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-07-05 11:11:52.842
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2025-07-05 11:11:53.193
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-07-05 11:11:53.193
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.mylyn.tasks.ui 2 0 2025-07-05 11:11:57.460
+!MESSAGE No search provider was registered. Tasks search is not available.
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-07-05 11:11:58.737
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\brian'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:13:43.909
+!MESSAGE Unexpected null value present!
+!STACK 0
+java.lang.IllegalStateException: Unexpected null value present!
+	at org.eclipse.lsp4e.internal.NullSafetyHelper.castNonNull(NullSafetyHelper.java:36)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticTokensClient.requestFullSemanticTokens(SemanticTokensClient.java:45)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticHighlightReconcilerStrategy.fullReconcile(SemanticHighlightReconcilerStrategy.java:239)
+	at org.eclipse.lsp4e.operations.semanticTokens.SemanticHighlightReconcilerStrategy.initialReconcile(SemanticHighlightReconcilerStrategy.java:258)
+	at org.eclipse.ui.internal.genericeditor.CompositeReconcilerStrategy.initialReconcile(CompositeReconcilerStrategy.java:48)
+	at org.eclipse.jface.text.reconciler.Reconciler.initialProcess(Reconciler.java:223)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:177)
+
+!ENTRY org.eclipse.jface 2 0 2025-07-05 11:13:44.207
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2025-07-05 11:13:44.207
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolInWorkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolInWorkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:16:54.865
+!MESSAGE [Info]	ESLint server running in node v22.13.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:16:54.959
+!MESSAGE [Info]	No ES Library found for file: file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/resources/static/js/GuardarProductoInventario.js
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:16:54.989
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.7.3 from path "C:\Users\brian\Desktop\sts-4.30.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.6.202502071606\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:16:55.014
+!MESSAGE [Info]	Typescript Server version info: {version=5.7.3, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:17:13.260
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:17:14.294
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:17:14.933
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:17:15.004
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:17:17.407
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:18:13.449
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:18:13.463
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/pom.xml
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:20:34.875
+!MESSAGE [Info]	ESLint server running in node v22.13.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:20:34.959
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.7.3 from path "C:\Users\brian\Desktop\sts-4.30.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.6.202502071606\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:20:34.964
+!MESSAGE [Info]	Typescript Server version info: {version=5.7.3, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:20:34.967
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/pom.xml
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:20:34.968
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/pom.xml
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:22:20.804
+!MESSAGE [Info]	ESLint server running in node v22.13.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:22:20.849
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.7.3 from path "C:\Users\brian\Desktop\sts-4.30.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.6.202502071606\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:22:20.853
+!MESSAGE [Info]	Typescript Server version info: {version=5.7.3, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:22:20.855
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/pom.xml
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-07-05 11:22:55.660
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-07-05 11:23:32.140
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:31:26.190
+!MESSAGE [Info]	ESLint server running in node v22.13.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:31:26.237
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.7.3 from path "C:\Users\brian\Desktop\sts-4.30.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.6.202502071606\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 11:31:26.240
+!MESSAGE [Info]	Typescript Server version info: {version=5.7.3, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 11:31:26.242
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/pom.xml
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 15:26:21.418
+!MESSAGE [Info]	ESLint server running in node v22.13.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 15:26:21.517
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.7.3 from path "C:\Users\brian\Desktop\sts-4.30.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.6.202502071606\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 15:26:21.522
+!MESSAGE [Info]	Typescript Server version info: {version=5.7.3, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 15:26:21.555
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Controller/ProductoController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 15:26:37.209
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Controller/ProductoController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 15:26:37.592
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Controller/ProductoController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 15:26:42.335
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Controller/ProductoController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 15:26:42.343
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Controller/ProductoController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 15:26:42.528
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Controller/ProductoController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 15:26:42.535
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Controller/ProductoController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 15:43:58.738
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Controller/ProductoController.java
+
+!ENTRY org.eclipse.ui 4 0 2025-07-05 16:04:07.513
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.jface.internal.text.html.BrowserInformationControlInput.getHtml()" because "this.fInput" is null
+	at org.eclipse.jface.internal.text.html.BrowserInformationControl.computeSizeHint(BrowserInformationControl.java:432)
+	at org.eclipse.lsp4e.operations.hover.FocusableBrowserInformationControl.updateBrowserSize(FocusableBrowserInformationControl.java:101)
+	at org.eclipse.lsp4e.operations.hover.FocusableBrowserInformationControl.lambda$1(FocusableBrowserInformationControl.java:105)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4217)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3330)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3705)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:668)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:576)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:178)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:670)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:607)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1492)
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 16:29:03.567
+!MESSAGE [Info]	ESLint server running in node v22.13.1
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 16:29:03.644
+!MESSAGE [Info]	Using Typescript version (user-setting) 5.7.3 from path "C:\Users\brian\Desktop\sts-4.30.0.RELEASE\plugins\org.eclipse.wildwebdeveloper_1.2.6.202502071606\node_modules\typescript\lib\tsserver.js"
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-07-05 16:29:03.648
+!MESSAGE [Info]	Typescript Server version info: {version=5.7.3, source=user-setting}
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 16:30:06.939
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 16:30:06.993
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 16:30:07.369
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 16:30:07.438
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 2 0 2025-07-05 16:32:52.687
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 16:35:30.346
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 16:35:30.374
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 16:35:31.330
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-07-05 16:36:16.322
+!MESSAGE [Error]	Unexpected resource file:///C:/Users/brian/Desktop/sitema%20inventario/Inventario/src/main/java/com/JOSE/Inventario/Security/config/SecurityConfig.java
