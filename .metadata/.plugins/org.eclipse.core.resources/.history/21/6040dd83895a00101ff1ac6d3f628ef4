@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Guardar Producto</title>
+</head>
+<body>
+    <h1>Formulario para Guardar Producto</h1>
+    
+    <!-- Mostrar mensaje de error si existe -->
+    <div th:if="${error}" th:text="${error}"></div>
+    
+    <form th:action="@{/productos/guardar}" th:object="${productoDto}" method="post">
+        <div>
+            <label for="nombre">Nombre del Producto:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" required>
+        </div>
+        
+        <div>
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" th:field="*{precio}" step="0.01" min="0" required>
+        </div>
+        
+        <div>
+            <label for="existencia">Existencia:</label>
+            <input type="number" id="existencia" th:field="*{existencia}" min="0" required>
+        </div>
+        
+        <div>
+            <label for="categoriaId">Categoría:</label>
+            <select id="categoriaId" th:field="*{categoriaId}" required>
+                <option value="">Seleccione una categoría</option>
+                <option value="1">Bebidas</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="imagen">URL de la Imagen:</label>
+            <input type="text" id="imagen" th:field="*{imagen}" placeholder="https://ejemplo.com/imagen.jpg">
+        </div>
+        
+        <div>
+            <label for="estado">Estado:</label>
+            <select id="estado" th:field="*{estado}">
+                <option value="true">Activo</option>
+                <option value="false">Inactivo</option>
+            </select>
+        </div>
+        
+        <div>
+            <button type="submit">Guardar Producto</button>
+            <a href="http://localhost:8080/productos">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>

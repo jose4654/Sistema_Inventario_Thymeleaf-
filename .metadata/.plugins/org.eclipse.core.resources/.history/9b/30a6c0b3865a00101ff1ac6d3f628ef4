@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Guardar Producto</title>
+</head>
+<body>
+    <h1>Formulario para guardar producto</h1>
+</body>
+</html>
+ml>
