@@ -1,0 +1,128 @@
+package com.JOSE.Inventario.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.JOSE.Inventario.DTO.UserSecRequesDto;
+import com.JOSE.Inventario.DTO.UserSecResponseDto;
+import com.JOSE.Inventario.Service.IUserService;
+
+//@RestController
+@Controller
+@RequestMapping("/usuarios")
+//@PreAuthorize("denyAll()")
+public class UserController {
+
+    @Autowired
+    private IUserService userService;
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/lista")
+    public String getAllUsers(Model model) {
+    	List<UserSecResponseDto> usuarios=userService.listaUsuarios();
+    	//retorna al html usuarios en el html va porder acceder por "usuarios"
+    	model.addAttribute("usuarios",usuarios);
+    	
+    	
+    	
+       return"usuario";
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getUserById(@PathVariable Long id) {
+        try {
+            UserSecResponseDto user = userService.buscarUsuarioId(id);
+            return ResponseEntity.ok(user);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
+        }
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping
+    public ResponseEntity<?> createUser(@RequestBody UserSecRequesDto userDto) {
+        try {
+      
+            UserSecResponseDto newUser = userService.guardarUsuario(userDto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body("Error al crear el usuario: " + e.getMessage());
+        }
+    }
+    
+    
+    @PreAuthorize("permitAll()")
+    @PostMapping("/login/client")
+    public ResponseEntity<?> createUserclient(@RequestBody UserSecRequesDto userDto) {
+        try {
+      
+            UserSecResponseDto newUser = userService.guardarUsuariocliente(userDto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body("Error al crear el usuario: " + e.getMessage());
+        }
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateUser(@PathVariable Long id, @RequestBody UserSecRequesDto userDto) {
+        try {
+   
+            UserSecResponseDto updatedUser = userService.actualizarUsuario(id, userDto);
+            return ResponseEntity.ok(updatedUser);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
+        }
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
+        try {
+            userService.buscarUsuarioId(id); // Verificar si existe
+            userService.eliminarUsuario(id);
+            return ResponseEntity.ok("Usuario eliminado correctamente");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
+        }
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/{id}/estado")
+    public ResponseEntity<?> cambiarEstadoUsuario(@PathVariable Long id, @RequestBody boolean estado) {
+        try {
+            UserSecResponseDto user = userService.cambiarEstadoUsuario(id, estado);
+            return ResponseEntity.ok(user);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
+        }
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/username/{username}")
+    public ResponseEntity<?> getUserByUsername(@PathVariable String username) {
+        try {
+            UserSecResponseDto user = userService.buscarUsuarioPorUsername(username);
+            return ResponseEntity.ok(user);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado");
+        }
+    }
+}
+
